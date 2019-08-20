@@ -15,14 +15,19 @@ function Icon({
     path, size, color, transform, viewBox,
   }) {
     const copySvgPath = function(e){
+
+      
       let pathShowBox = document.getElementById('pathShowBox');
       pathShowBox.innerHTML = "";
       let iconSvg = e.target.getAttribute("d");
+      if(iconSvg){
       let clipboard = document.createElement('div');
       let svgPath = document.createTextNode(iconSvg);
       clipboard.appendChild(svgPath);
       pathShowBox.appendChild(clipboard);
-      console.log(iconSvg);
+      }
+      
+      
       
     }
     const cor = '#000';
