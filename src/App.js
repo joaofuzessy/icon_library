@@ -15,7 +15,7 @@ function App() {
         <h1>
           Biblioteca de ícones
         </h1>
-        <p>Versão 0.2.0</p>
+        <p>Versão 0.3.0</p>
       </header>
 
       <div id="modalPath">
