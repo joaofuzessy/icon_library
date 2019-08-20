@@ -19,12 +19,24 @@ function Icon({
       
       let pathShowBox = document.getElementById('pathShowBox');
       pathShowBox.innerHTML = "";
+      document.getElementById('feedback').textContent = "";
       let iconSvg = e.target.getAttribute("d");
       if(iconSvg){
-      let clipboard = document.createElement('div');
-      let svgPath = document.createTextNode(iconSvg);
-      clipboard.appendChild(svgPath);
-      pathShowBox.appendChild(clipboard);
+        let clipboard = document.createElement('textarea');
+        let svgPath = document.createTextNode(iconSvg);
+        let feedback = document.createTextNode("Copiado para a área de transferência!");
+        clipboard.value = svgPath.textContent;
+        pathShowBox.appendChild(clipboard);
+        
+        clipboard.select();
+        document.execCommand('copy');
+        setTimeout(function(){
+          document.getElementById('feedback').appendChild(feedback);
+        }, 500);
+        
+        setTimeout(function(){
+          document.getElementById('feedback').textContent = "";
+        }, 3000);
       }
       
       

@@ -32,8 +32,31 @@
 }
 
 #modalPath div{
-  padding: 20px 10% 40px;
+  padding: 20px 10% 10px;
 }
+
+#modalPath span{
+  padding-bottom: 30px;
+  font-size: 16px;
+  color: #fff;
+}
+
+#modalPath textarea{
+width: 60%;
+min-height: 50px;
+background: transparent;
+color: white;
+border-color: transparent;
+box-shadow: none;
+border: none !important;
+}
+#modalPath textarea:focus{
+  border-color: transparent;
+box-shadow: none;
+border: none !important;
+outline: none;
+}
+
 
 #modalPath h4{
   margin: 0;

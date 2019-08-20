@@ -19,8 +19,9 @@ function App() {
       </header>
 
       <div id="modalPath">
-        <h4>Copie o path abaixo para usar o ícone:</h4>
+        <h4>Clique no ícone desejado abaixo. O path será copiado automaticamente para a área de transferência.</h4>
         <div id="pathShowBox"></div>
+        <span id="feedback"></span>
       </div>
         
     <IconList></IconList>
