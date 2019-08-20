@@ -17,6 +17,11 @@ function App() {
         </h1>
         <p>Versão 0.1.0</p>
       </header>
+
+      <div id="modalPath">
+        <h4>Copie o path abaixo para usar o ícone:</h4>
+        <div id="pathShowBox"></div>
+      </div>
         
     <IconList></IconList>
      

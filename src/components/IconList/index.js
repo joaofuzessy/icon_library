@@ -4,6 +4,11 @@ import { icons } from '../Icon/iconPaths';
 import './IconList.scss';
 
 
+
+
+
+
+
 const getPathNames = () => { // Gera um array com todos os nomes de paths ja definidos
   let allIcons = [];
   for( var key in iconPaths){
@@ -22,7 +27,7 @@ const getPathNames = () => { // Gera um array com todos os nomes de paths ja def
         <section className="icons-container">
 
         {allIconsPathNames.map((val, i)=>{
-            return <div className="icon-container"><Icon path={val}></Icon></div>
+            return <div className="icon-container"><Icon  path={val}></Icon></div>
           })}
         
       </section>

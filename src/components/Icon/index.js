@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-//import './Icon.scss';
+import './Icon.scss';
 import { icons } from './iconPaths.js';
+
+
+
+
+
 
 
 
@@ -9,6 +14,17 @@ import { icons } from './iconPaths.js';
 function Icon({
     path, size, color, transform, viewBox,
   }) {
+    const copySvgPath = function(e){
+      let pathShowBox = document.getElementById('pathShowBox');
+      pathShowBox.innerHTML = "";
+      let iconSvg = e.target.getAttribute("d");
+      let clipboard = document.createElement('div');
+      let svgPath = document.createTextNode(iconSvg);
+      clipboard.appendChild(svgPath);
+      pathShowBox.appendChild(clipboard);
+      console.log(iconSvg);
+      
+    }
     const cor = '#000';
     const sizeDefault = size === undefined ? '21px' : size;
     const viewBoxDefault = viewBox === undefined ? "0 0 24 24" : viewBox;
@@ -17,7 +33,7 @@ function Icon({
       ' 45.8425511 15.683493 40.3090511 15.683493 ',
     ];
     return (
-      <svg
+      <svg onClick={(e) => copySvgPath(e)}
         fill={cor}
         width={sizeDefault}
         height={sizeDefault}
