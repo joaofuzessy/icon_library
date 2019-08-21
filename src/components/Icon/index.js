@@ -83,7 +83,7 @@ function Icon({
   };
   
   Icon.defaultProps = {
-    size: '24px',
+    size: '50px',
     transform: '',
     path: '',
   };
