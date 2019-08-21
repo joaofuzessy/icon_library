@@ -14,14 +14,8 @@ import { icons } from './iconPaths.js';
 function Icon({
     path, size, color, transform, viewBox,
   }) {
-    const copySvgPath = function(e){
-
-      
-      let pathShowBox = document.getElementById('pathShowBox');
-      pathShowBox.innerHTML = "";
-      document.getElementById('feedback').textContent = "";
-      let iconSvg = e.target.getAttribute("d");
-      if(iconSvg){
+    
+    const getSvg = function(iconSvg, pathShowBox){
         let clipboard = document.createElement('textarea');
         let svgPath = document.createTextNode(iconSvg);
         let feedback = document.createTextNode("Copiado para a área de transferência!");
@@ -37,8 +31,20 @@ function Icon({
         setTimeout(function(){
           document.getElementById('feedback').textContent = "";
         }, 3000);
+    }
+    
+    const copySvgPath = function(e){
+      let pathShowBox = document.getElementById('pathShowBox');
+      pathShowBox.innerHTML = "";
+      document.getElementById('feedback').textContent = "";
+      let iconSvg = e.target.getAttribute("d");
+      if(iconSvg){
+        getSvg(iconSvg, pathShowBox);
       }
-      
+      else{//Corrige retornar null se clicar no path
+        let iconSvg = e.target.childNodes[0].childNodes[0].getAttribute("d");
+        getSvg(iconSvg, pathShowBox);
+      }
       
       
     }
@@ -83,7 +89,7 @@ function Icon({
   };
   
   Icon.defaultProps = {
-    size: '50px',
+    size: '48px',
     transform: '',
     path: '',
   };
