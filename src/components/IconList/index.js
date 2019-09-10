@@ -27,7 +27,7 @@ const getPathNames = () => { // Gera um array com todos os nomes de paths ja def
         <section className="icons-container">
 
         {allIconsPathNames.map((val, i)=>{
-            return <div className="icon-container"><Icon  path={val}></Icon></div>
+            return <div className="icon-container"><Icon  path={val}></Icon> <p>{val}</p></div>
           })}
         
       </section>
