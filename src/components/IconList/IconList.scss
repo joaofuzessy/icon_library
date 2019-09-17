@@ -5,8 +5,26 @@ section.icons-container{
 
     .icon-container{
         float: left;
-        margin: 20px;
-        width: 200px;
+        margin-bottom: 20px;
+        width: 50%;
+        overflow-wrap: break-word;
+        padding: 0 30px;
+        box-sizing: border-box;
       }
 
+}
+
+
+@media all and (min-width: 690px){
+  section.icons-container{
+  
+
+    .icon-container{
+        float: left;
+        margin-bottom: 20px;
+        width: 25%;
+       
+      }
+
+}
 }
