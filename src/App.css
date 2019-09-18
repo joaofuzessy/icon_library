@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .App-logo {
@@ -10,13 +13,14 @@
 
 .App-header {
   background-color: #000000;
-  min-height: 15vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: 18px;
   color: white;
+  width: 100%;
 }
 
 .App-link {
@@ -28,7 +32,7 @@
   min-height: 200px;
   color: white;
   background-color: #212B36;
-  margin: 0 auto;
+  margin: 0 auto 30px;
 }
 
 #modalPath div{
@@ -42,7 +46,7 @@
 }
 
 #modalPath textarea{
-width: 60%;
+width: 80%;
 min-height: 150px;
 background: transparent;
 color: white;
