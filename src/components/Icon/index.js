@@ -18,25 +18,27 @@ function Icon({
     const getSvg = function(iconSvg, pathShowBox){
         let clipboard = document.createElement('textarea');
         let svgPath = document.createTextNode(iconSvg);
-        let feedback = document.createTextNode("Copiado para a área de transferência!");
+        //et feedback = document.createTextNode("Copiado para a área de transferência!");
+        
         clipboard.value = svgPath.textContent;
         pathShowBox.appendChild(clipboard);
         
         clipboard.select();
         document.execCommand('copy');
-        setTimeout(function(){
-          document.getElementById('feedback').appendChild(feedback);
-        }, 500);
         
-        setTimeout(function(){
-          document.getElementById('feedback').textContent = "";
-        }, 3000);
+        //setTimeout(function(){
+         // document.getElementById('feedback').appendChild(feedback);
+        //}, 500);
+        
+        //setTimeout(function(){
+        //  document.getElementById('feedback').textContent = "";
+        //}, 3000);
     }
     
     const copySvgPath = function(e){
       let pathShowBox = document.getElementById('pathShowBox');
       pathShowBox.innerHTML = "";
-      document.getElementById('feedback').textContent = "";
+      //document.getElementById('feedback').textContent = "";
       let iconSvg = e.target.getAttribute("d");
       if(iconSvg){
         getSvg(iconSvg, pathShowBox);
@@ -45,6 +47,9 @@ function Icon({
         let iconSvg = e.target.childNodes[0].childNodes[0].getAttribute("d");
         getSvg(iconSvg, pathShowBox);
       }
+      setTimeout(function(){
+        alert("Path copiado para a área de Tranferência!");
+      }, 500);
       
       
     }
